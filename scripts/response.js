@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     let audioPath = '';
 
     if (randomResponse === '그럼') {
-      audioPath = chrome.runtime.getURL('assets/audio/positive/그럼.mp3');
+      audioPath = 'assets/audio/positive/그럼.mp3';
     } else if (randomResponse === '돼') {
       const positiveAudios = [
         'assets/audio/positive/돼_0.mp3',
