@@ -1,0 +1,11 @@
+{
+  "manifest_version": 3,
+  "name": "Magic Conch",
+  "version": "1.0",
+  "description": "SpongeBob's Magic Conch Shell that gives random yes/no answers.",
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "assets/images/소라고동_원본.png"
+  },
+  "permissions": []
+}
