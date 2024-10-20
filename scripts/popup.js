@@ -1,9 +1,56 @@
-document.getElementById('pull-string').addEventListener('click', function() {
-  const responses = ['안돼', '돼'];
-  const randomResponse = responses[Math.floor(Math.random() * responses.length)];
-  document.getElementById('response').textContent = randomResponse;
+document.addEventListener('DOMContentLoaded', function() {
+  let lastResponse = '';
 
-  // Optionally play audio
-  const audio = new Audio(randomResponse === '돼' ? 'yes_sound.mp3' : 'no_sound.mp3');
-  audio.play();
+  document.getElementById('pull-string').addEventListener('click', function() {
+    const positiveResponses = ['그럼', '돼'];
+    const negativeResponses = ['안돼', '그것도 안돼', '가만히 있어'];
+    const otherResponses = ['다시한번 물어봐'];
+
+    let possibleResponses = [];
+
+    if (lastResponse === '안돼') {
+      possibleResponses = [...positiveResponses, ...negativeResponses.filter(r => r !== '안돼'), ...otherResponses];
+    } else {
+      possibleResponses = [...positiveResponses, ...negativeResponses, ...otherResponses];
+    }
+
+    const randomResponse = possibleResponses[Math.floor(Math.random() * possibleResponses.length)];
+    document.getElementById('response').textContent = randomResponse;
+    lastResponse = randomResponse;
+
+    // Play corresponding audio
+    let audioPath = '';
+
+    if (randomResponse === '그럼') {
+      audioPath = chrome.runtime.getURL('assets/audio/positive/그럼.mp3');
+    } else if (randomResponse === '돼') {
+      const positiveAudios = [
+        chrome.runtime.getURL('assets/audio/positive/돼_0.mp3'),
+        chrome.runtime.getURL('assets/audio/positive/돼_1.mp3'),
+        chrome.runtime.getURL('assets/audio/positive/돼_2.mp3'),
+        chrome.runtime.getURL('assets/audio/positive/돼_3.mp3'),
+        chrome.runtime.getURL('assets/audio/positive/돼_4.mp3')
+      ];
+      audioPath = positiveAudios[Math.floor(Math.random() * positiveAudios.length)];
+    } else if (randomResponse === '안돼') {
+      const negativeAudios = [
+        chrome.runtime.getURL('assets/audio/negative/안돼_0.mp3'),
+        chrome.runtime.getURL('assets/audio/negative/안돼_1.mp3'),
+        chrome.runtime.getURL('assets/audio/negative/안돼_2.mp3'),
+        chrome.runtime.getURL('assets/audio/negative/안돼_3.mp3'),
+        chrome.runtime.getURL('assets/audio/negative/안돼_4.mp3')
+      ];
+      audioPath = negativeAudios[Math.floor(Math.random() * negativeAudios.length)];
+    } else if (randomResponse === '그것도 안돼') {
+      audioPath = chrome.runtime.getURL('assets/audio/negative/그것도_안돼.mp3');
+    } else if (randomResponse === '가만히 있어') {
+      audioPath = chrome.runtime.getURL('assets/audio/negative/가만히_있어.mp3');
+    } else {
+      audioPath = chrome.runtime.getURL('assets/audio/other/다시한번_물어봐.mp3');
+    }
+
+    console.log('Playing audio path:', audioPath);
+    const audio = new Audio(audioPath);
+    audio.play().catch(error => console.error('Failed to play audio:', error));
+  });
 });
