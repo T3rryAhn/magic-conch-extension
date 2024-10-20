@@ -25,28 +25,28 @@ document.addEventListener('DOMContentLoaded', function() {
       audioPath = chrome.runtime.getURL('assets/audio/positive/그럼.mp3');
     } else if (randomResponse === '돼') {
       const positiveAudios = [
-        chrome.runtime.getURL('assets/audio/positive/돼_0.mp3'),
-        chrome.runtime.getURL('assets/audio/positive/돼_1.mp3'),
-        chrome.runtime.getURL('assets/audio/positive/돼_2.mp3'),
-        chrome.runtime.getURL('assets/audio/positive/돼_3.mp3'),
-        chrome.runtime.getURL('assets/audio/positive/돼_4.mp3')
+        'assets/audio/positive/돼_0.mp3',
+        'assets/audio/positive/돼_1.mp3',
+        'assets/audio/positive/돼_2.mp3',
+        'assets/audio/positive/돼_3.mp3',
+        'assets/audio/positive/돼_4.mp3'
       ];
       audioPath = positiveAudios[Math.floor(Math.random() * positiveAudios.length)];
     } else if (randomResponse === '안돼') {
       const negativeAudios = [
-        chrome.runtime.getURL('assets/audio/negative/안돼_0.mp3'),
-        chrome.runtime.getURL('assets/audio/negative/안돼_1.mp3'),
-        chrome.runtime.getURL('assets/audio/negative/안돼_2.mp3'),
-        chrome.runtime.getURL('assets/audio/negative/안돼_3.mp3'),
-        chrome.runtime.getURL('assets/audio/negative/안돼_4.mp3')
+        'assets/audio/negative/안돼_0.mp3',
+        'assets/audio/negative/안돼_1.mp3',
+        'assets/audio/negative/안돼_3.mp3',
+        'assets/audio/negative/안돼_2.mp3',
+        'assets/audio/negative/안돼_4.mp3'
       ];
       audioPath = negativeAudios[Math.floor(Math.random() * negativeAudios.length)];
     } else if (randomResponse === '그것도 안돼') {
-      audioPath = chrome.runtime.getURL('assets/audio/negative/그것도_안돼.mp3');
+      audioPath = 'assets/audio/negative/그것도_안돼.mp3';
     } else if (randomResponse === '가만히 있어') {
-      audioPath = chrome.runtime.getURL('assets/audio/negative/가만히_있어.mp3');
+      audioPath = 'assets/audio/negative/가만히_있어.mp3';
     } else {
-      audioPath = chrome.runtime.getURL('assets/audio/other/다시한번_물어봐.mp3');
+      audioPath = 'assets/audio/other/다시한번_물어봐.mp3';
     }
 
     console.log('Playing audio path:', audioPath);
