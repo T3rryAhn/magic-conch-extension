@@ -1,11 +1,14 @@
 {
   "manifest_version": 3,
-  "name": "Magic Conch",
+  "name": "마법의 소라고동",
   "version": "1.0",
-  "description": "SpongeBob's Magic Conch Shell that gives random yes/no answers.",
+  "icons": {
+    "128": "assets/images/128.png"
+  },
+  "description": "마음속 혹은 육성으로 예/아니오로 답변 가능한 질문을 외치시고, 🐚마법의 소라고동🔮의 고리를 드래그 한뒤 놓아보세요! ",
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "assets/images/magic_conch.png"
+    "default_icon": "assets/images/128.png"
   },
   "permissions": []
 }
