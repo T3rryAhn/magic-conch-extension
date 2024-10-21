@@ -1,10 +1,59 @@
 #conch-container {
   text-align: center;
   padding: 20px;
+  background: rgba(255, 255, 255, 0.0);
+  width: 200px;
+  height: auto;
 }
+
+#conch-image-wrapper {
+  position: relative; /* pull-ring의 기준이 되도록 설정 */
+  display: inline-block; /* 이미지와 pull-ring을 함께 배치 */
+  width: 150px; /* 이미지 크기와 일치 */
+}
+
 #conch-image {
   width: 150px;
 }
+
 #pull-string {
-  margin-top: 10px;
+  position: absolute;
+  width: 4px; /* 끈의 두께 */
+  height: 0; /* 기본적으로 끈의 길이는 0에서 시작 */
+  background-color: #fcfffe; /* 끈의 색상 */
+  border: #40625c solid 1px; /* 끈의 테두리 설정 */
+  transform-origin: top center; /* 끈이 당겨질 때의 기준점 설정 */
+  transform: translateX(-50%) rotate(0deg); /* 중앙으로 정렬 및 회전 */
+  z-index: 1; /* 끈이 고리 뒤로 가지 않도록 설정 */
+}
+
+#pull-ring {
+  position: absolute;
+  width: 40px;
+  top: 45px; /* 초기 위치 */
+  right: -10px;
+  transform: translateX(-50%);
+  cursor: grab;
+  user-select: none;
+  transform-origin: center top; /* 회전 중심 설정 */
+  z-index: 2; /* 끈보다 앞에 위치하도록 설정 */
+}
+
+#pull-ring:active {
+  cursor: grabbing;
+  transition: none; /* 당길 때는 즉각적인 반응을 위해 애니메이션 제거 */
+}
+
+#response {
+  margin-top: 20px;
+  font-size: 1.5em;
+  color: #000;
+}
+
+html, body {
+  background-color: rgb(213, 242, 228);
+  user-select: none;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
 }

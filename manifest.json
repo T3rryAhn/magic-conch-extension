@@ -5,7 +5,7 @@
   "description": "SpongeBob's Magic Conch Shell that gives random yes/no answers.",
   "action": {
     "default_popup": "popup.html",
-    "default_icon": "assets/images/소라고동_원본.png"
+    "default_icon": "assets/images/magic_conch.png"
   },
   "permissions": []
 }

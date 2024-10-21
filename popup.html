@@ -3,14 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>Magic Conch Shell</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="styles\popup-style.css">
 </head>
 <body>
   <div id="conch-container">
-    <img id="conch-image" src="magic_conch.png" alt="Magic Conch">
-    <button id="pull-string">Pull the String</button>
+    <div id="conch-image-wrapper">
+      <img id="conch-image" src="assets\images\magic_conch_no_strip.png" alt="Magic Conch" draggable="false">
+      <div id="pull-string"></div>
+      <img id="pull-ring" src="assets\images\strip.png" draggable="false">
+    </div>
     <p id="response"></p>
   </div>
-  <script src="popup.js"></script>
+  <script src="scripts/response.js"></script>
+  <script src="scripts/pull-ring.js"></script>
 </body>
 </html>
