@@ -35,7 +35,7 @@
   transform: translateX(-50%);
   cursor: grab;
   user-select: none;
-  transform-origin: center center; /* 회전 중심 설정 */
+  transform-origin: center top; /* 회전 중심 설정 */
   z-index: 2; /* 끈보다 앞에 위치하도록 설정 */
 }
 
