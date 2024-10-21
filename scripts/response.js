@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   let lastResponse = '';
 
-  document.getElementById('pull-string').addEventListener('click', function() {
+  function playMagicConchResponse() {
     const positiveResponses = ['그럼', '돼'];
     const negativeResponses = ['안돼', '그것도 안돼', '가만히 있어'];
     const otherResponses = ['다시한번 물어봐'];
@@ -52,5 +52,7 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('Playing audio path:', audioPath);
     const audio = new Audio(audioPath);
     audio.play().catch(error => console.error('Failed to play audio:', error));
-  });
+  };
+
+  window.playMagicConchResponse = playMagicConchResponse;
 });
