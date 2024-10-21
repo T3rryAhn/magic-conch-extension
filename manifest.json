@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Magic Conch",
+  "name": "마법의 소라고동",
   "version": "1.0",
-  "description": "SpongeBob's Magic Conch Shell that gives random yes/no answers.",
+  "description": "스폰지밥에 나온 마법의 소라고동이 당신의 질문에 예/아니오로 답해줍니다.",
   "action": {
     "default_popup": "popup.html",
     "default_icon": "assets/images/magic_conch.png"
