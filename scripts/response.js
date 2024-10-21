@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (lastResponse === '안돼') {
       possibleResponses = [...positiveResponses, ...negativeResponses.filter(r => r !== '안돼'), ...otherResponses];
     } else {
-      possibleResponses = [...positiveResponses, ...negativeResponses, ...otherResponses];
+      possibleResponses = [...positiveResponses, ...negativeResponses.filter(r => r !== '그것도 안돼'), ...otherResponses];
     }
 
     const randomResponse = possibleResponses[Math.floor(Math.random() * possibleResponses.length)];
