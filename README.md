@@ -2,7 +2,7 @@
 # Magic Conch [chrome extension]
 제작자: t3rryahn.dev@gmail.com
 
-![마법의 소라고동](assets\images\magic_conch.png)
+![마법의 소라고동](assets/images/magic_conch.png)
 > 스폰지밥에 나온 '마법의 소라고동'을 크롬 확장 프로그램으로 만들었습니다. <br>
 > 마음속으로 혹은 육성으로 예/아니오 로 답변이 가능한 질문을 하시고 고리를 당기시면, 마법의 소라고동 님이 답변을 해주십니다.
 
