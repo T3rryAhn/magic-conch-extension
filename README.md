@@ -10,7 +10,7 @@
 
 ### 설치 방법
 #### 크롬 웹스토어에서 받는 방법
-> 웹스토어 등록후 작성하겠습니다.
+> [크롬 웹스토어](https://chromewebstore.google.com/detail/%EB%A7%88%EB%B2%95%EC%9D%98-%EC%86%8C%EB%9D%BC%EA%B3%A0%EB%8F%99/cngadogedbklhgelahcpjofagelffgng?hl=ko)
 #### 직접 설치하는 방법
 1. 프로젝트 전체 폴더를 다운받는다.
 2. 크롬 주소창에 [chrome://extensions/](chrome://extensions/) 접속
